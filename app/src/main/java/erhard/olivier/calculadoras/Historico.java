@@ -1,6 +1,11 @@
 package erhard.olivier.calculadoras;
+import android.util.Log;
 
 public class Historico {
+    //Criação dos metodos
+    //Criação dos Getters and Setters
+
+    private int id;
     private double valorA;
     private double valorB;
     private String operacao;
@@ -8,6 +13,10 @@ public class Historico {
     private String dataHora;
 
     public void setId(int id) {
+        this.id = id;
+    }
+    public int getId(){
+        return id;
     }
 
     public double getValorA() {
