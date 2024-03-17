@@ -1,5 +1,4 @@
 package erhard.olivier.calculadoras;
-import android.util.Log;
 
 public class Historico {
     //Criação dos metodos
@@ -10,7 +9,7 @@ public class Historico {
     private double valorB;
     private String operacao;
     private double resultado;
-    private String dataHora;
+    private String dataTime;
 
     public void setId(int id) {
         this.id = id;
@@ -51,11 +50,11 @@ public class Historico {
         this.resultado = resultado;
     }
 
-    public String getDataHora() {
-        return dataHora;
+    public String getDataTime() {
+        return dataTime;
     }
 
-    public void setDataHora(String dataHora) {
-        this.dataHora = dataHora;
+    public void setDataTime(String dataTime) {
+        this.dataTime = dataTime;
     }
 }

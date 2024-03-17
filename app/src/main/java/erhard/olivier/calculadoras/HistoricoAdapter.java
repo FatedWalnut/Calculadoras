@@ -53,7 +53,7 @@ public class HistoricoAdapter extends BaseAdapter {
             viewHolder.txtValorB = convertView.findViewById(R.id.txtValorB);
             viewHolder.txtOperacao = convertView.findViewById(R.id.txtOperacao);
             viewHolder.txtResultado = convertView.findViewById(R.id.txtResultado);
-            viewHolder.txtDataHora = convertView.findViewById(R.id.txtDataHora);
+            viewHolder.txtDataHora = convertView.findViewById(R.id.txtDataTime);
             // Define a tag do ViewHolder na visualização para reutilização
             convertView.setTag(viewHolder);
         } else {
@@ -69,7 +69,7 @@ public class HistoricoAdapter extends BaseAdapter {
         viewHolder.txtValorB.setText(String.valueOf(operacoes.getValorB()));
         viewHolder.txtOperacao.setText(operacoes.getOperacao());
         viewHolder.txtResultado.setText(String.valueOf(operacoes.getResultado()));
-        viewHolder.txtDataHora.setText(operacoes.getDataHora());
+        viewHolder.txtDataHora.setText(operacoes.getDataTime());
 
         return convertView;
     }

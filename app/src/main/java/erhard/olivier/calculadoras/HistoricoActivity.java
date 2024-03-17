@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,7 +53,7 @@ public class HistoricoActivity extends AppCompatActivity {
                 operacoes.setValorB(cursor.getDouble(cursor.getColumnIndex("valorB")));
                 operacoes.setOperacao(cursor.getString(cursor.getColumnIndex("operacao")));
                 operacoes.setResultado(cursor.getDouble(cursor.getColumnIndex("resultado")));
-                operacoes.setDataHora(cursor.getString(cursor.getColumnIndex("dataTime")));
+                operacoes.setDataTime(cursor.getString(cursor.getColumnIndex("dataTime")));
 
                 // Adiciona o objeto Historico à lista
                 operacoesList.add(operacoes);

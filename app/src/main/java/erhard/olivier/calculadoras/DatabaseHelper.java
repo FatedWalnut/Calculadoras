@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Criação da tabela 'historico' com as colunas necessárias
-        String sql = "CREATE TABLE historico(id INTEGER PRIMARY KEY, valorA REAL, valorB REAL, operacao TEXT, resultado REAL, dataTime TEXT);";
+        String sql = "CREATE TABLE historico(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, valorA REAL, valorB REAL, operacao TEXT, resultado REAL, dataTime TEXT);";
         db.execSQL(sql); // Executa o comando SQL para criar a tabela
     }
 

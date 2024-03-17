@@ -54,24 +54,13 @@ public class MainActivity extends AppCompatActivity {
             values.put("dataTime", getDateTime());
 
             // Insere os valores no banco de dados
-            db.insert("historico", null, values);
-            Log.d("InserirDados", "Inserindo dados no banco de dados: valorA=" + valorA + ", valorB=" + valorB + ", operacao=" + operacao + ", resultado=" + resultado);
-            Cursor cursor = db.rawQuery("SELECT MAX(id) FROM historico", null);
-            // Não estava incrementando sozinho o id tive que criar uma gambiarra
-            int ultimoId = 0;
-            if (cursor.moveToFirst()) {
-                ultimoId = cursor.getInt(0);
-            }
-            cursor.close();
+            long id = db.insert("historico", null, values);
+            Log.d("InserirDados", "Inserindo dados no banco de dados: valorA=" + valorA + ", valorB=" + valorB + ", operacao=" + operacao + ", resultado=" + resultado + ", ID=" + id);
 
-
-            int proximoId = ultimoId + 1;
-
-            // Insere os valores no banco de dados com o próximo ID
-            values.put("id", proximoId);
             // Feche o banco de dados após a inserção
             db.close();
         }
+
 
 
 
@@ -97,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Resultado da soma: " + resultado, Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "Cálculo armazenado com sucesso: ", Toast.LENGTH_SHORT).show();
 
+            valorAEditText.setText("");
+            valorBEditText.setText("");
+
         }
     }
     // Método para lidar com o clique do botão de subtracao
@@ -112,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
             inserirDadosNoBanco(valorA,valorB,"-",resultado);
             Toast.makeText(this, "Resultado da subtracao: " + resultado, Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "Cálculo armazenado com sucesso: ", Toast.LENGTH_SHORT).show();
+            valorAEditText.setText("");
+            valorBEditText.setText("");
+
         }
     }
     // Método para lidar com o clique do botão de Multiplicaçao
@@ -126,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
             inserirDadosNoBanco(valorA,valorB,"*",resultado);
             Toast.makeText(this, "Resultado da subtracao: " + resultado, Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "Cálculo armazenado com sucesso: ", Toast.LENGTH_SHORT).show();
+            valorAEditText.setText("");
+            valorBEditText.setText("");
+
         }
     }
 
@@ -147,6 +145,9 @@ public class MainActivity extends AppCompatActivity {
                 inserirDadosNoBanco(valorA, valorB, "÷", resultado);
                 Toast.makeText(this, "Resultado da divisão: " + resultado, Toast.LENGTH_SHORT).show();
                 Toast.makeText(this, "Cálculo armazenado com sucesso", Toast.LENGTH_SHORT).show();
+                valorAEditText.setText("");
+                valorBEditText.setText("");
+
             }
         }
     }

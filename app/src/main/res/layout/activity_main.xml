@@ -17,7 +17,7 @@
         android:layout_marginTop="88dp"
         android:hint="@string/valor_a"
         android:textColor="@color/white"
-        android:inputType="number"
+        android:inputType="numberDecimal|number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
-        android:inputType="number"
+        android:inputType="numberDecimal|number"
         android:hint="@string/valor_b"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
